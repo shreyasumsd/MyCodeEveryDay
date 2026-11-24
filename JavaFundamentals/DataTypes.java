@@ -1,3 +1,4 @@
+package JavaFundamentals;
 //Day-7 (30-sept-2026)
 // 8 types of data types in java
 

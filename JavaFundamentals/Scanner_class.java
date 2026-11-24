@@ -1,3 +1,4 @@
+package JavaFundamentals;
 import java.util.*;
 
 public class Scanner_class 

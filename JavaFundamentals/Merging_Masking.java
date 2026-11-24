@@ -1,3 +1,4 @@
+package JavaFundamentals;
 public class Merging_Masking 
 {
     public static void main(String[] args) 

@@ -1,3 +1,4 @@
+package JavaFundamentals;
 public class InrDivVSFloatDiv 
 {
     public static void main(String[] args) 

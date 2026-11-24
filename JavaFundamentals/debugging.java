@@ -1,3 +1,4 @@
+package JavaFundamentals;
 //Day-4 (25-sept-2026)
 
 public class debugging {

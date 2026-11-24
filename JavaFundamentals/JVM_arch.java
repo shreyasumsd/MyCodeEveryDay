@@ -1,3 +1,4 @@
+package JavaFundamentals;
 // Day 9 - 02-OCT-2026
 
 public class JVM_arch 

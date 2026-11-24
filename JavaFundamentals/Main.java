@@ -1,3 +1,4 @@
+package JavaFundamentals;
 //Day-2 (23-sept-2026)
 
 public class Main {

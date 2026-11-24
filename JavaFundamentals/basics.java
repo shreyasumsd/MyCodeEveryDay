@@ -1,3 +1,4 @@
+package JavaFundamentals;
 //Day-5 (28-sept-2026)
 
 class basics {
