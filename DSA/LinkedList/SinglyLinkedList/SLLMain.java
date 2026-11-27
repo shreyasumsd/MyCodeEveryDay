@@ -4,7 +4,31 @@ public class SLLMain
 {
     public static void main(String[] args) 
     {
-        SinglyLinkedList singly = new SinglyLinkedList(); //object created
+
+        SinglyLinkedList sortedList1 = new SinglyLinkedList();
+        sortedList1.insertAtStart(100);
+        sortedList1.insertAtStart(90);
+        sortedList1.insertAtStart(80);
+        sortedList1.insertAtStart(70);
+        sortedList1.insertAtStart(60);
+        sortedList1.insertAtStart(50);
+        sortedList1.printAllNodes();
+        System.out.println();
+
+        SinglyLinkedList sortedList2 = new SinglyLinkedList();
+        sortedList2.insertAtStart(95);
+        sortedList2.insertAtStart(85);
+        sortedList2.insertAtStart(75);
+        sortedList2.insertAtStart(65);
+        sortedList2.insertAtStart(55);
+        sortedList2.printAllNodes();
+        System.out.println();
+
+        SinglyLinkedList mergedList = SinglyLinkedList.mergerLists(sortedList1, sortedList2);
+        mergedList.printAllNodes();
+
+
+        /* SinglyLinkedList singly = new SinglyLinkedList(); //object created
         // SinglyLinkedList luckyNumber = new SinglyLinkedList();
 
         singly.printAllNodes();
@@ -67,7 +91,10 @@ public class SLLMain
 
         singly.findMiddleNode();
 
+        Node firstNode = singly.getNodeAtStartAndRemoveIt();
+        singly.printAllNodes();
+        System.out.println("Extracted node data: "+ firstNode.data);
 
-
+ */
     }    
 }

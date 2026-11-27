@@ -25,7 +25,8 @@ public class SinglyLinkedList
             System.out.println("linked list is null");
             return;
         }
-        else{
+        else
+        {
             Node walker=this.head;
             while(walker!=null)
             {
@@ -55,6 +56,7 @@ public class SinglyLinkedList
     public void insertAtEnd(int value)
     {
         Node newNode=new Node(value);
+        this.count++;
 
         if(this.head==null)
         {
@@ -72,6 +74,32 @@ public class SinglyLinkedList
         }
         this.count++;
     }
+
+    public void insertAtEnd(Node newNode)
+    {
+        if(newNode == null)
+        {
+            return;
+        }
+
+        if(this.head == null)
+        {
+            this.head = newNode;
+            this.count++;
+            return;
+        }
+
+        Node currentNode = this.head;
+
+        while(currentNode.next != null)
+        {
+            currentNode = currentNode.next;
+        }
+
+        currentNode.next = newNode;
+        this.count++;
+    }
+
 
     public void insertAtPosition(int value, int position)
     {
@@ -170,6 +198,81 @@ public class SinglyLinkedList
         this.head = this.head.next;
         this.count--;
     }
+
+    Node getNodeAtStartAndRemoveIt()
+    {
+        if(this.head == null)
+        {
+            System.out.println("List is empty");
+            return null;
+        }
+
+        Node firstNode = this.head;
+
+        this.head = this.head.next;
+
+        firstNode.next = null;  // IMPORTANT: disconnect the extracted node
+
+        this.count--;
+
+        return firstNode;
+    }
+
+    public static SinglyLinkedList mergerLists(SinglyLinkedList firstList, SinglyLinkedList secondList)
+    {
+        SinglyLinkedList mergedList = new SinglyLinkedList();
+
+        if(firstList == null)
+        {
+            return secondList;
+        }
+
+        if(secondList == null)
+        {
+            return firstList;
+        }
+
+        while(firstList.head != null && secondList.head != null)
+        {
+            Node firstNode = null;
+
+            if(firstList.head.data < secondList.head.data)
+            {
+                firstNode = firstList.getNodeAtStartAndRemoveIt();
+            }
+            else
+            {
+                firstNode = secondList.getNodeAtStartAndRemoveIt();
+            }
+
+            mergedList.insertAtEnd(firstNode);
+        }
+
+        SinglyLinkedList unfinishedList = null;
+
+        if(firstList.head != null)
+        {
+            unfinishedList = firstList;
+        }
+        else if(secondList.head != null)
+        {
+            unfinishedList = secondList;
+        }
+
+        if(unfinishedList != null)
+        {
+            while(unfinishedList.head != null)
+            {
+                Node newNode = unfinishedList.getNodeAtStartAndRemoveIt();
+                mergedList.insertAtEnd(newNode);
+            }
+        }
+
+        System.out.println("Merged List: ");
+
+        return mergedList;
+    }
+
 
     public void deleteAtEnd()
     {
